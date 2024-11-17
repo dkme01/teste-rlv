@@ -32,9 +32,8 @@ export default function RootLayout({
 		>
 		<SidebarProvider>
 			<Header/>
-			<AppSidebar
-			/>
-			<SidebarInset>
+			<AppSidebar collapsible='icon'/>
+			<SidebarInset className="flex flex-col h-screen w-full m-auto relative">
 				<div className="flex flex-1 pt-20 flex-col gap-4 p-4">
 					{children}
 				</div>
