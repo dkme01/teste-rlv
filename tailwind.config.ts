@@ -10,6 +10,13 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			screens:{
+				sm: '480px',
+				md: '768px',
+				lg: '976px',
+				xl: '1440px',
+				"2xl": "2000px"
+			},
 			fontFamily: {
 				sans: ['var(--font-sans)', ...fontFamily.sans],
 				mono: ['var(--font-roboto-mono)'],
