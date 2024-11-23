@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import {
 	ColumnDef,
 	ColumnFiltersState,
@@ -15,6 +14,7 @@ import {
 	getSortedRowModel,
 	useReactTable,
 } from "@tanstack/react-table"
+import * as React from "react"
 
 import {
 	Table,
@@ -25,11 +25,10 @@ import {
 	TableRow,
 } from "@/components/ui/table"
 
+import { DataTableHeader } from "@/app/components/table/data-table-header"
+import { Separator } from "@/components/ui/separator"
 import { DataTablePagination } from "./data-table-pagination"
 import { DataTableToolbar } from "./data-table-toolbar"
-import { Separator } from "@/components/ui/separator";
-import { DataTableHeader } from "@/app/components/table/data-table-header";
-import { usePDFJS } from "@/hooks/use-pdf-js"
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[]
@@ -40,9 +39,6 @@ export function DataTable<TData, TValue>({
 	columns,
 	data,
 }: DataTableProps<TData, TValue>) {
-	usePDFJS(async (pdfjs) => {
-		console.log(pdfjs)
-	})
 	const [rowSelection, setRowSelection] = React.useState({})
 	const [columnVisibility, setColumnVisibility] =
 		React.useState<VisibilityState>({})
